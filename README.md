@@ -5,13 +5,13 @@
 
 An easily configurable Docker image for running an Electrumx server on the PKT network.
 
-Check it out on dockerhub at [cjd1/pkt-electrumx](https://hub.docker.com/r/cjd1/pkt-electrumx).
+Check it out on dockerhub at [thomasjp0x42/pkt-electrumx](https://hub.docker.com/r/thomasjp0x42/pkt-electrumx).
 
 ## Usage
 
 1. Install [pktd](https://github.com/pkt-cash/pktd)
 
-2. Launch pktd with the following arguments:
+2. Launch pktd with the following arguments (-u and -P for the RPC user and password):
 
 ```
 pktd --addrindex --txindex --notls --rpclisten=172.17.0.1 -u x -P x
@@ -35,10 +35,13 @@ docker run \
   -e COST_HARD_LIMIT=50000 \
   -e INITIAL_CONCURRENT=10000000 \
   -e REQUEST_SLEEP=20 \
+  -e DONATION_ADDRESS="pkt1qnnkpxmlclruyh6h0j5jhytwyu7rm09paz0kckv" \
   -p 64767:64767 \
   -e REPORT_SERVICES="ssl://yourdomain.example.com:64767" \
-  cjd1/pkt-electrumx
+  thomasjp0x42/pkt-electrumx
 ```
+
+Please change the "DONATION_ADDRESS" variable to one of your own wallet addresses, in order to be able to receive donations from ElectrumX wallet users who benefit from your server.  The address listed here will go to thomasjp0x42's wallet.  There is no default donation address in this docker image.
 
 If there's an SSL certificate/key (`electrumx.crt`/`electrumx.key`) in the `/electrumx_data` volume it'll be used. If not, one will be generated for you.
 
@@ -81,3 +84,4 @@ MIT License
 
 * © Luke Childs
 * Caleb James DeLisle
+* James P. Thomas
