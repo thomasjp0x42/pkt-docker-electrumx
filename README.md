@@ -41,7 +41,7 @@ docker run \
   thomasjp0x42/pkt-electrumx
 ```
 
-Please change the "DONATION_ADDRESS" variable to one of your own wallet addresses, in order to be able to receive donations from ElectrumX wallet users who benefit from your server.  The address listed here will go to thomasjp0x42's wallet.  There is no default donation address in this docker image.
+Please change the **DONATION_ADDRESS** variable to one of your own wallet addresses, in order to be able to receive donations from ElectrumX wallet users who benefit from your server if they so choose.  There is no default donation address in this docker image.
 
 If there's an SSL certificate/key (`electrumx.crt`/`electrumx.key`) in the `/electrumx_data` volume it'll be used. If not, one will be generated for you.
 
